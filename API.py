@@ -58,13 +58,17 @@ def get_healthcheck():
 async def index():
     return {"message": "Hello World use //docs for swagger docs"}
 
+@app.get("/actions")
+async def get_actions(): 
+    return {"actions" : ["ArrowUP" , "ArrowDOWN" , "ArrowLEFT" , "ArrowRIGHT"]}
+
 
 @app.post("/listening" ,  summary="pass value using header")
 async def read_items(action: Annotated[Union[List[str], None], Header()] = None):
     # return {"response": str(ask_ai(action[0])) }
     print("\n\nreceived action \n" , action[0] )
-    return {"response": action[0] }
+    return {"response": action[0] } 
 
 
-
+   
 
