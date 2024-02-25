@@ -61,7 +61,7 @@ async def index():
 
 @app.get("/actions")
 async def get_actions(): 
-    return {"actions" : ["up" , "down" , "left" , "right"]}
+    return {"actions" : ["PO" , "PC" , "P" , "L" , "R"]}
 
 
 @app.post("/listening" ,  summary="pass value using header")
